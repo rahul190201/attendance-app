@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Attendance Records</h4>
+<table class="table table-striped">
+    <tr>
+        <th>Student</th>
+        <th>Status</th>
+        <th>Date</th>
+    </tr>
+    {% for record in records %}
+    <tr>
+        <td>{{ record[0] }}</td>
+        <td>{{ record[1] }}</td>
+        <td>{{ record[2] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

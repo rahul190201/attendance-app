@@ -1,0 +1,19 @@
+# Ignore virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+
+# Database (optional, if you don’t want to upload local DB)
+*.db
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp

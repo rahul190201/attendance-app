@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Mark Attendance</h4>
+<form method="POST">
+    {% for student in students %}
+        <p>{{ student[1] }}
+            <input type="radio" name="{{ student[0] }}" value="Present" required> Present
+            <input type="radio" name="{{ student[0] }}" value="Absent"> Absent
+        </p>
+    {% endfor %}
+    <button type="submit" class="btn btn-warning">Submit Attendance</button>
+</form>
+{% endblock %}
