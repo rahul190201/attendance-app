@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Edit Attendance</h4>
+<form method="POST">
+    <p><strong>Student:</strong> {{ record[1] }}</p>
+    <p><strong>Course:</strong> {{ record[2] }}</p>
+    <label>Status:</label>
+    <select name="status" class="form-control mb-2" required>
+        <option value="Present" {% if record[3] == "Present" %}selected{% endif %}>Present</option>
+        <option value="Absent" {% if record[3] == "Absent" %}selected{% endif %}>Absent</option>
+    </select>
+    <label>Date:</label>
+    <input type="date" name="date" class="form-control mb-2" value="{{ record[4] }}" required>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+{% endblock %}

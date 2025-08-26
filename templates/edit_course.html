@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h4>Edit Course</h4>
+<form method="POST">
+    <input type="text" name="name" value="{{ course[1] }}" class="form-control mb-2" required>
+    <button type="submit" class="btn btn-success">Update</button>
+</form>
+{% endblock %}
