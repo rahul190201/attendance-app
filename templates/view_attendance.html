@@ -1,18 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-<h4>Attendance Records</h4>
+<h4>View Attendance</h4>
+<form method="POST" class="mb-3">
+    <label>Select Course:</label>
+    <select name="course" class="form-control mb-2" required>
+        {% for course in courses %}
+            <option value="{{ course[0] }}">{{ course[1] }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Select Date:</label>
+    <input type="date" name="date" class="form-control mb-2" required>
+
+    <button type="submit" class="btn btn-info">View</button>
+</form>
+
+{% if records %}
 <table class="table table-striped">
     <tr>
         <th>Student</th>
         <th>Status</th>
         <th>Date</th>
+        <th>Course</th>
     </tr>
     {% for record in records %}
     <tr>
         <td>{{ record[0] }}</td>
         <td>{{ record[1] }}</td>
         <td>{{ record[2] }}</td>
+        <td>{{ record[3] }}</td>
     </tr>
     {% endfor %}
 </table>
+{% endif %}
 {% endblock %}

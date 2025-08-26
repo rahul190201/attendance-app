@@ -2,6 +2,16 @@
 {% block content %}
 <h4>Mark Attendance</h4>
 <form method="POST">
+    <label>Select Course:</label>
+    <select name="course" class="form-control mb-2" required>
+        {% for course in courses %}
+            <option value="{{ course[0] }}">{{ course[1] }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Select Date:</label>
+    <input type="date" name="date" class="form-control mb-2" required>
+
     {% for student in students %}
         <p>{{ student[1] }}
             <input type="radio" name="{{ student[0] }}" value="Present" required> Present
